@@ -1,13 +1,63 @@
 :root {
+  /* colors */
+
   --primary: #fab0bc;
   --secondary: #790842;
   --backgroundcolor: #f7f6f1;
-  --blacktext: #19191a;
+  --black: #19191a;
+
+  /* border */
+  --redborder: solid 1px var(--secondary);
+  --pinkborder: solid 1px var(--primary);
+  --blackborder: solid 1px var(--black);
+
+  /* gaps */
+  --smallgap: 0.5rem;
+  --mediumgap: 1rem;
+  --biggap: 2rem;
 }
 
+/* h1 */
 h1 {
-  font-family: "roc-grotesk", sans-serif;
-  font-weight: 300;
+  font-family: itc-benguiat, serif;
+  font-weight: 700;
   font-style: normal;
   color: var(--primary);
+  font-size: 5.125rem;
+}
+
+h2 {
+  font-family: itc-benguiat, serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--primary);
+  font-size: 3.75rem;
+}
+
+h3 {
+  font-family: itc-benguiat, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+h4 {
+  font-family: roc-grotesk, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+}
+
+p {
+  font-family: roc-grotesk, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.125rem;
+}
+
+button {
+  font-family: roc-grotesk, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.125rem;
 }
