@@ -1,0 +1,58 @@
+---
+const { title, body, imgPath, description } = Astro.props;
+---
+
+<li>
+  <article>
+    <img src={imgPath} alt="" height="350" width="350" />
+    <h3>
+      <a href="#0">{title}</a>
+    </h3>
+    <h4>{description}</h4>
+    <p>{body}</p>
+  </article>
+  <section>
+    <div class="left"></div>
+    <div class="right">se mere</div>
+  </section>
+</li>
+
+<style>
+  article {
+    overflow: hidden;
+  }
+
+  img {
+    height: 220px;
+  }
+
+  li {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    width: 311px;
+
+    border: solid 1px #790842;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+  }
+  h4 {
+    font-weight: 100;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    margin-top: 0;
+  }
+
+  .right {
+    padding: 2rem;
+  }
+</style>

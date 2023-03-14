@@ -1,0 +1,48 @@
+---
+const { title } = Astro.props;
+---
+
+<section>
+  <header>
+    <h2>
+      <a href="#0">{title}</a>
+    </h2>
+    <a href="#0">Show all</a>
+  </header>
+  <ul class="grid-container">
+    <slot />
+  </ul>
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: var(--space-md);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  header > a {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+  }
+
+  h2 a {
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: var(--space-lg);
+  }
+</style>
