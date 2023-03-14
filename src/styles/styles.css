@@ -1,0 +1,13 @@
+:root {
+  --primary: #fab0bc;
+  --secondary: #790842;
+  --backgroundcolor: #f7f6f1;
+  --blacktext: #19191a;
+}
+
+h1 {
+  font-family: "roc-grotesk", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--primary);
+}
