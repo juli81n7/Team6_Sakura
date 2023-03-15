@@ -1,6 +1,7 @@
 ---
 import { Debug } from "astro/components";
 import Card from "../components/Card.astro";
+import Largebtn from "../components/Largebtn.astro";
 import Shelf from "../components/Shelf.astro";
 import Smallbtn from "../components/Smallbtn.astro";
 import "../styles/styles.css";
@@ -36,8 +37,13 @@ const data = await respons.json();
       <a href="program"><li>Program</li></a>
       <a href="singleview"><li>singleview</li></a>
     </ul>
-
-    <Smallbtn />
+    <div>
+      <Smallbtn />
+    </div>
+    <br />
+    <div>
+      <Largebtn />
+    </div>
   </body>
 </html>
 
