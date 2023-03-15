@@ -28,13 +28,13 @@ const data = await respons.json();
   </head>
 
   <body>
-    <Debug {data} />
+    <ul>
+      <a href="faq"><li>FAQ</li></a>
 
-    <main class="main">
-      <div class="grid_container">
-        {data.map((item) => <Card title={item.name} description={item.description} imgPath={"../public/" + `images/${item.id}` + ".png"} />)}
-      </div>
-    </main>
+      <a href="about"><li>About</li></a>
+      <a href="program"><li>Program</li></a>
+      <a href="singleview"><li>singleview</li></a>
+    </ul>
   </body>
 </html>
 
