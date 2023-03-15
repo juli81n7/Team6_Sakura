@@ -2,6 +2,7 @@
 import { Debug } from "astro/components";
 import Card from "../components/Card.astro";
 import Shelf from "../components/Shelf.astro";
+import "../styles/styles.css";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
 
@@ -30,7 +31,20 @@ const data = await respons.json();
   <body>
     <main class="main">
       <div class="grid_container">
-        {data.map((item) => <Card title={item.name} description={item.description} imgPath={"../public/" + `images/${item.id}` + ".png"} />)}
+        {
+          data.map((item) => (
+            <Card
+              title={item.name}
+              description={item.description}
+              imgPath={"../public/images/" + `${item.image_path}`}
+              event_by={item.event_firm}
+              place={item.place}
+              day={item.day}
+              from={item.time_from.slice(0, 5)}
+              to={item.time_from.slice(0, 5)}
+            />
+          ))
+        }
       </div>
     </main>
   </body>
