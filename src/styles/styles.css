@@ -16,6 +16,18 @@
   --biggap: 2rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* h1 */
 h1 {
   font-family: itc-benguiat, serif;
@@ -38,6 +50,10 @@ h3 {
   font-weight: 500;
   font-style: normal;
   font-size: 2rem;
+}
+
+footer h3 {
+  font-family: roc-grotesk, sans-serif;
 }
 
 h4 {
