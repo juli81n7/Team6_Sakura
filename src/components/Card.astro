@@ -32,7 +32,9 @@ import Readme from "../components/Readme.astro";
         </span>
       </p>
     </div>
-    <Readme />
+    <a href="#">
+      <button class="right"> Read more</button>
+    </a>
   </section>
 </li>
 
@@ -63,7 +65,6 @@ import Readme from "../components/Readme.astro";
   }
 
   h4 {
-    font-weight: 100;
     margin-left: 0.3rem;
     margin-right: 1rem;
     margin-top: -0.7rem;
@@ -122,5 +123,13 @@ import Readme from "../components/Readme.astro";
     height: 69px;
     display: flex;
     border-top: var(--redborder);
+  }
+
+  button {
+    border: none;
+  }
+  button:hover {
+    background-color: var(--secondary);
+    transition: 250ms ease-in-out;
   }
 </style>
