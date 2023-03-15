@@ -52,6 +52,10 @@ h3 {
   font-size: 2rem;
 }
 
+footer h3 {
+  font-family: roc-grotesk, sans-serif;
+}
+
 h4 {
   font-family: roc-grotesk, sans-serif;
   font-weight: 600;
