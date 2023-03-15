@@ -1,5 +1,5 @@
 ---
-import { Debug } from "astro/components";
+import Topnav from "../components/Topnav.astro";
 import Card from "../components/Card.astro";
 import Shelf from "../components/Shelf.astro";
 import Smallbtn from "../components/Smallbtn.astro";
@@ -31,6 +31,7 @@ const data = await respons.json();
   </head>
 
   <body>
+    <Topnav />
     <main>
       <h1>Program</h1>
       <p>
