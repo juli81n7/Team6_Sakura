@@ -1,5 +1,6 @@
 ---
 const { title, imgPath, description, event_by, place, day, from, to } = Astro.props;
+import Readme from "../components/Readme.astro";
 ---
 
 <li>
@@ -31,7 +32,7 @@ const { title, imgPath, description, event_by, place, day, from, to } = Astro.pr
         </span>
       </p>
     </div>
-    <div class="right"><p>Read more</p></div>
+    <Readme />
   </section>
 </li>
 
