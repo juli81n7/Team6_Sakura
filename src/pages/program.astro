@@ -2,6 +2,7 @@
 import { Debug } from "astro/components";
 import Card from "../components/Card.astro";
 import Shelf from "../components/Shelf.astro";
+import Smallbtn from "../components/Smallbtn.astro";
 import "../styles/styles.css";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
@@ -29,7 +30,17 @@ const data = await respons.json();
   </head>
 
   <body>
-    <main class="main">
+    <main>
+      <h1>Program</h1>
+      <p>
+        We have made a great program for you to experience at this years festival. Get ready to get to know all sort of things from japanese culture. Get a quick look at alle of the event right here,
+        or go deeper into the events further down.
+      </p>
+
+      <div class="selector">
+        {data.map((item) => <Smallbtn title={item.name} />)}
+      </div>
+
       <Shelf title={"Fredag"}>
         {
           data.map((item) => (
@@ -51,9 +62,23 @@ const data = await respons.json();
 </html>
 
 <style>
-  .grid_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+  h1 {
+    margin-left: 2rem;
+  }
+  p {
+    margin-left: 2rem;
+    max-width: 70ch;
+  }
+
+  body {
+    background-color: var(--backgroundcolor);
+  }
+
+  .selector {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smallgap);
   }
 </style>
