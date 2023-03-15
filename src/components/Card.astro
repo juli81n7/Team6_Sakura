@@ -1,11 +1,12 @@
 ---
 const { title, imgPath, description, event_by, place, day, from, to } = Astro.props;
-import Readme from "../components/Readme.astro";
+import Likebtn from "../components/Likebtn.astro";
 ---
 
 <li>
   <article>
     <div class="image_container">
+      <Likebtn />
       <img src={imgPath} />
     </div>
     <h5>{event_by}</h5>
@@ -47,6 +48,8 @@ import Readme from "../components/Readme.astro";
     height: 220px;
     width: 100%;
     border-bottom: var(--redborder);
+    position: relative;
+    margin-top: 0;
   }
 
   li {
