@@ -3,29 +3,31 @@ import "../styles/styles.css";
 ---
 
 <header>
-  <div>
+  <div class="logo">
     <a href="index"> <img src="public/images/logo.svg" alt="Sakura logo" /></a>
   </div>
   <nav class="nav-bar">
-    <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="#" class="nav-link">Bla</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Bla</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Bla</a>
-      </li>
-    </ul>
     <div class="search"><img src="public/images/search.svg" alt="" /></div>
     <div class="burgermenu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Bla</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Bla</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Bla</a>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
+
+<script src="../pages/scripts/script.js"></script>
 
 <style>
   header {
@@ -43,29 +45,44 @@ import "../styles/styles.css";
     height: 2px;
     margin: 0.5rem auto;
     background-color: var(--secondary);
+    transition: 250ms ease;
   }
 
   nav {
     display: flex;
     gap: var(--mediumgap);
   }
+  .burgermenu.active .nav-menu {
+    align-self: center;
+  }
+
   .search,
+  .logo,
   .burgermenu {
-    width: 50px;
-    height: 50px;
     display: block;
     cursor: pointer;
   }
+  .search {
+    width: 50px;
+    height: 50px;
+  }
+
   .burgermenu.active .bar:nth-child(2) {
     opacity: 0;
   }
   .burgermenu.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
   }
   .burgermenu.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
   }
   li {
     list-style: none;
+  }
+  .nav-link {
+    display: none;
+  }
+  .burgermenu.active .nav-link {
+    display: block;
   }
 </style>
