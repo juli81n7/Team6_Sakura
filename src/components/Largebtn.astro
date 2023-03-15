@@ -1,0 +1,28 @@
+---
+const { title } = Astro.props;
+---
+
+<a href="">
+  <button class="largebutton">My Program</button>
+</a>
+
+<style>
+  .largebutton {
+    background-color: var(--backgroundcolor);
+    height: 95px;
+    width: 311px;
+    padding: 0px 40px;
+    border-radius: 0%;
+    border: var(--redborder);
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+  }
+
+  .largebutton:hover {
+    background-color: var(--primary);
+    color: var(--backgroundcolor);
+    transition: 250ms ease-in-out;
+  }
+</style>
