@@ -6,9 +6,24 @@ import "../styles/styles.css";
   <div>
     <a href="index"> <img src="public/images/logo.svg" alt="Sakura logo" /></a>
   </div>
-  <nav>
+  <nav class="nav-bar">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Bla</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Bla</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Bla</a>
+      </li>
+    </ul>
     <div class="search"><img src="public/images/search.svg" alt="" /></div>
-    <div class="burgermenu"></div>
+    <div class="burgermenu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </nav>
 </header>
 
@@ -22,6 +37,14 @@ import "../styles/styles.css";
     justify-content: space-between;
     align-items: center;
   }
+  .bar {
+    display: block;
+    width: 2rem;
+    height: 2px;
+    margin: 0.5rem auto;
+    background-color: var(--secondary);
+  }
+
   nav {
     display: flex;
     gap: var(--mediumgap);
@@ -30,5 +53,19 @@ import "../styles/styles.css";
   .burgermenu {
     width: 50px;
     height: 50px;
+    display: block;
+    cursor: pointer;
+  }
+  .burgermenu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burgermenu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burgermenu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  li {
+    list-style: none;
   }
 </style>
