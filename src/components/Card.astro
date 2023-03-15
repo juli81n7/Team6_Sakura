@@ -45,7 +45,7 @@ import Likebtn from "../components/Likebtn.astro";
   }
 
   .image_container {
-    height: 220px;
+    min-height: 220px;
     width: 100%;
     border-bottom: var(--redborder);
     position: relative;
@@ -58,6 +58,7 @@ import Likebtn from "../components/Likebtn.astro";
     max-width: 100%;
     min-height: 100%;
     z-index: 1;
+    pointer-events: none;
   }
 
   li {
@@ -65,8 +66,9 @@ import Likebtn from "../components/Likebtn.astro";
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
-    width: 311px;
+    min-height: 400px;
+    min-width: 311px;
+    max-width: 400px;
 
     border: var(--redborder);
   }
@@ -89,7 +91,7 @@ import Likebtn from "../components/Likebtn.astro";
   }
 
   .right {
-    width: 190px;
+    width: 100%;
     height: 69px;
     display: flex;
     justify-content: center;
@@ -133,7 +135,8 @@ import Likebtn from "../components/Likebtn.astro";
 
   .buttom_nav {
     height: 69px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 122px auto;
     border-top: var(--redborder);
   }
 

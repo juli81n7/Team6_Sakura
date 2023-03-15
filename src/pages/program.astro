@@ -30,7 +30,7 @@ const data = await respons.json();
 
   <body>
     <main class="main">
-      <div class="grid_container">
+      <Shelf title={"Fredag"}>
         {
           data.map((item) => (
             <Card
@@ -45,16 +45,12 @@ const data = await respons.json();
             />
           ))
         }
-      </div>
+      </Shelf>
     </main>
   </body>
 </html>
 
 <style>
-  main {
-    display: flex;
-    justify-content: center;
-  }
   .grid_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
