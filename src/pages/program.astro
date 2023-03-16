@@ -17,6 +17,16 @@ const options = {
 
 const respons = await fetch(url, options);
 const data = await respons.json();
+
+const urlfood = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/food";
+
+const responsfood = await fetch(urlfood, options);
+const datafood = await responsfood.json();
+
+const urlbooth = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/booths";
+
+const responsbooth = await fetch(urlbooth, options);
+const databooth = await responsbooth.json();
 ---
 
 <html lang="en">
@@ -26,8 +36,7 @@ const data = await respons.json();
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://use.typekit.net/qqk5mpc.css" />
     <meta name="generator" content={Astro.generator} />
-
-    <title>forside</title>
+    <title>program</title>
   </head>
 
   <body>
@@ -78,16 +87,30 @@ const data = await respons.json();
 
       <Shelf title={"Food"}>
         {
-          data.map((item) => (
+          datafood.map((food) => (
             <Card
-              title={item.name}
-              description={item.description}
-              imgPath={"../public/images/" + `${item.image_path}`}
-              event_by={item.event_firm}
-              place={item.place}
-              from={item.time_from.substring(0, 5)}
-              to={item.time_from.substring(0, 5)}
-              day={item.day}
+              title={food.name}
+              description={food.description.substring(0, 200) + "..."}
+              imgPath={"../public/images/" + `${food.image_path}`}
+              event_by={food.event_firm}
+              place={food.place}
+              from={food.time}
+              day={food.day}
+            />
+          ))
+        }
+      </Shelf>
+      <Shelf title={"Booths"}>
+        {
+          databooth.map((booth) => (
+            <Card
+              title={booth.name}
+              description={booth.description.substring(0, 200) + "..."}
+              imgPath={"../public/images/" + `${booth.image_path}`}
+              event_by={booth.event_firm}
+              place={booth.place}
+              from={booth.time}
+              day={booth.day}
             />
           ))
         }
