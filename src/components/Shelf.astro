@@ -26,7 +26,7 @@ const { title } = Astro.props;
 
   h2 {
     text-decoration: none;
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 
   .grid-container {
@@ -35,6 +35,8 @@ const { title } = Astro.props;
     overflow: hidden;
     gap: 1rem;
     overflow: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-x: repeat(100vh);
   }
 
   @media (min-width: 700px) {
@@ -43,7 +45,7 @@ const { title } = Astro.props;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
       gap: 2rem;
-      margin-left: 2rem;
+      margin-left: 1rem;
       margin-right: 2rem;
     }
   }
