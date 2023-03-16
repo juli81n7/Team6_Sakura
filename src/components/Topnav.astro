@@ -14,13 +14,13 @@ import "../styles/styles.css";
       <span class="bar"></span>
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="#" class="nav-link">Bla</a>
+          <a href="#" class="nav-link">About</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Bla</a>
+          <a href="#" class="nav-link">Program</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Bla</a>
+          <a href="#" class="nav-link">MyProgram</a>
         </li>
       </ul>
     </div>
@@ -31,13 +31,26 @@ import "../styles/styles.css";
 
 <style>
   header {
+    position: fixed;
+    top: 0;
+
     display: flex;
     width: 100%;
-    height: 100%;
-    padding-block: 1rem;
+    padding-block: 1.5rem;
     background-color: var(--backgroundcolor);
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
+    border: var(--redborder);
+    transition: 0.2s ease-in-out;
+  }
+  header.active {
+    background-color: var(--primary);
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    align-items: flex-start;
+    transition: 0.2s ease-in-out;
   }
   .bar {
     display: block;
@@ -55,7 +68,60 @@ import "../styles/styles.css";
   .burgermenu.active .nav-menu {
     align-self: center;
   }
-
+  .nav-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 88px;
+    animation-name: foldop;
+    transform-origin: bottom;
+    animation-duration: 3s;
+    transition: 3s ease-in-out;
+  }
+  @keyframes foldud {
+    0% {
+      height: 16%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes foldop {
+    0% {
+      height: 100%;
+    }
+    100% {
+      height: 16%;
+    }
+  }
+  @keyframes visdig {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .nav-menu.active {
+    display: flex;
+    animation-name: visdig;
+    animation-duration: 0.1s;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    animation-name: foldud;
+    animation-duration: 0.2s;
+    transform-origin: top;
+    z-index: 0;
+  }
+  li a {
+    font-family: itc-benguiat, serif;
+    color: var(--backgroundcolor);
+    margin-bottom: 2.5rem;
+  }
   .search,
   .logo,
   .burgermenu {
@@ -63,10 +129,16 @@ import "../styles/styles.css";
     cursor: pointer;
   }
   .search {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
   }
-
+  .burgermenu {
+    margin-right: 1rem;
+  }
+  .logo {
+    margin-left: 1rem;
+    width: 12rem;
+  }
   .burgermenu.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -81,8 +153,16 @@ import "../styles/styles.css";
   }
   .nav-link {
     display: none;
+    text-decoration: none;
+    font-size: 3.25rem;
   }
   .burgermenu.active .nav-link {
     display: block;
+  }
+  @media (min-width: 700px) {
+    .search {
+      width: 35px;
+      height: 35px;
+    }
   }
 </style>
