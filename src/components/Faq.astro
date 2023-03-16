@@ -1,0 +1,58 @@
+---
+---
+
+<div class="box">
+  <section class="question">
+    <p class="faq_text">Are there toilets available at the festival?</p>
+
+    <div class="plus">
+      <span class="bar"></span>
+      <span class="bar2"></span>
+    </div>
+  </section>
+
+  <section class="answer hide">
+    <p>awgawhgfahwigihaegihawg</p>
+  </section>
+</div>
+<style>
+  .question {
+    border-block: solid 2px var(--secondary);
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .faq_text {
+    margin-block: 2rem;
+  }
+
+  .bar {
+    display: block;
+    width: 2.5rem;
+    height: 0.2rem;
+    margin-top: 2.5rem;
+    background-color: black;
+  }
+
+  .bar2 {
+    display: block;
+    width: 0.2rem;
+    height: 2.5rem;
+    margin-left: 1.1rem;
+    margin-top: -1.35rem;
+    background-color: black;
+  }
+
+  .hide {
+    display: none;
+  }
+</style>
+
+<script>
+  const box = document.querySelector(".answer");
+
+  document.querySelector(".question").addEventListener("click", () => {
+    console.log("hej");
+    box.classList.remove(".hide");
+  });
+</script>
