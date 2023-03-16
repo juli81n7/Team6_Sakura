@@ -1,46 +1,60 @@
 ---
 ---
 
-<div class="box">
-  <section class="question">
-    <p class="faq_text">Are there toilets available at the festival?</p>
-
+<details class="border">
+  <summary
+    >Are there toilets available at the festival?
     <div class="plus">
       <span class="bar"></span>
       <span class="bar2"></span>
     </div>
-  </section>
+  </summary>
+  <p>Yes there is unisex toilets.</p>
+</details>
 
-  <section class="answer hide">
-    <p>awgawhgfahwigihaegihawg</p>
-  </section>
-</div>
 <style>
-  .question {
-    border-block: solid 2px var(--secondary);
+  .border {
+    border-block: var(--redborder);
+  }
+  summary {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-block: 2rem;
+    margin-inline: 2rem;
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
   }
 
-  .faq_text {
-    margin-block: 2rem;
+  p {
+    margin: -0.5rem 0rem 2rem 2rem;
   }
 
   .bar {
     display: block;
-    width: 2.5rem;
+    width: 2rem;
     height: 0.2rem;
-    margin-top: 2.5rem;
+    margin-top: 0.5rem;
     background-color: black;
   }
 
   .bar2 {
     display: block;
     width: 0.2rem;
-    height: 2.5rem;
-    margin-left: 1.1rem;
-    margin-top: -1.35rem;
+    height: 2rem;
+    margin-left: 0.86rem;
+    margin-top: -1.1rem;
     background-color: black;
+  }
+
+  @media (min-width: 700px) {
+    summary {
+      margin-inline: 16rem;
+    }
+    p {
+      margin-inline: 16rem;
+    }
   }
 
   .hide {
@@ -49,10 +63,10 @@
 </style>
 
 <script>
-  const box = document.querySelector(".answer");
+  const bar2 = document.querySelector(".bar2");
+  const summary = document.querySelector("summary");
 
-  document.querySelector(".question").addEventListener("click", () => {
-    console.log("hej");
-    box.classList.remove(".hide");
+  summary.addEventListener("click", () => {
+    bar2.classList.toggle("hide");
   });
 </script>
