@@ -35,14 +35,18 @@ const data = await respons.json();
       </div>
       <div class="eventinfo">
         <Likebtn />
-        <h3>Saidokan</h3>
-        <h1>Wadaiko</h1>
-        <p>There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances.</p>
-        <Readme />
+        <div class="prioinfo">
+          <h3>Saidokan</h3>
+          <h1>Wadaiko</h1>
+          <p>There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances.</p>
+        </div>
+        <div class="infoknap">
+          <Readme />
+        </div>
         <div class="miniinfo">
           <p>Mainstage</p>
           <p>Saturday</p>
-          <p>10.45-11.11</p>
+          <p>10.45-11.00</p>
         </div>
       </div>
     </main>
@@ -52,12 +56,14 @@ const data = await respons.json();
 
 <style>
   main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 4rem;
   }
   main > * {
     flex-basis: 100%;
   }
+
   .eventinfo {
     display: flex;
     flex-direction: column;
@@ -72,5 +78,11 @@ const data = await respons.json();
   }
   .eventimg {
     border: var(--redborder);
+
+    flex-grow: 200;
+  }
+  img {
+    align-self: stretch;
+    object-fit: cover;
   }
 </style>
