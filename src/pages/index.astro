@@ -7,6 +7,8 @@ import Smallbtn from "../components/Smallbtn.astro";
 import Topnav from "../components/Topnav.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
+import Buttonshelf from "../components/Buttonshelf.astro";
+import Fpshelf from "../components/Fpshelf.astro";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
 
@@ -46,37 +48,14 @@ const data = await respons.json();
       <img class="image2" src="../public/images/landingpagefg.png" alt="baggrund" />
     </div>
 
+    <Fpshelf>
+      <Largebtn />
+      <Largebtn />
+      <Largebtn />
+      <Largebtn />
+    </Fpshelf>
+
     <Footer />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
   </body>
 </html>
 
@@ -94,6 +73,9 @@ const data = await respons.json();
     gap: 1rem;
   }
 
+  .fpknapper {
+    gap: 100px;
+  }
   img {
     border: 0;
     max-width: 100%;
