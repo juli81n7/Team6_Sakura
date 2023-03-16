@@ -4,6 +4,7 @@ import Readme from "../components/Readme.astro";
 import Topnav from "../components/Topnav.astro";
 import Footer from "../components/Footer.astro";
 import Likebtn from "../components/Likebtn.astro";
+import Card from "../components/Card.astro";
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
 
 const options = {
@@ -29,18 +30,47 @@ const data = await respons.json();
   <body>
     <Topnav />
     <main>
-      <img src="" alt="" />
-      <div>
+      <div class="eventimg">
+        <img src="public/images/wakaido.png" alt="" />
+      </div>
+      <div class="eventinfo">
         <Likebtn />
-        <h3></h3>
-        <h1></h1>
-        <p></p>
+        <h3>Saidokan</h3>
+        <h1>Wadaiko</h1>
+        <p>There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances.</p>
         <Readme />
-        <div>
-          <p></p>
+        <div class="miniinfo">
+          <p>Mainstage</p>
+          <p>Saturday</p>
+          <p>10.45-11.11</p>
         </div>
       </div>
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  main {
+    display: flex;
+    margin: 4rem;
+  }
+  main > * {
+    flex-basis: 100%;
+  }
+  .eventinfo {
+    display: flex;
+    flex-direction: column;
+    border: var(--redborder);
+  }
+
+  .miniinfo {
+    border: var(--redborder);
+    flex-shrink: 1;
+    align-self: flex-end;
+    margin-top: 3rem;
+  }
+  .eventimg {
+    border: var(--redborder);
+  }
+</style>

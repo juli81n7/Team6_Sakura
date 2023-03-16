@@ -15,5 +15,6 @@ document.querySelectorAll(".nav-link").forEach((n) =>
     navMenu.classList.remove("active");
     navLink.classList.remove("active");
     document.querySelector(".logo").classList.remove("active");
+    document.querySelector("header").classList.remove("active");
   })
 );
