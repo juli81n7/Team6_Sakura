@@ -1,11 +1,9 @@
 ---
 import Smallbtn from "./Smallbtn.astro";
-
-const { name } = Astro.props;
 ---
 
 <div class="selector">
-  <Smallbtn title={name} />
+  <slot />
 </div>
 
 <style>

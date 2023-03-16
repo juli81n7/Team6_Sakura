@@ -7,7 +7,11 @@ const { title } = Astro.props;
 <section>
   <header>
     <h2>{title}</h2>
-    <Buttonshelf name="Main stage" name="Main stage" />
+    <Buttonshelf>
+      <Smallbtn title="Main stage" />
+      <Smallbtn title="Second stage" />
+      <Smallbtn title="On the lawn" />
+    </Buttonshelf>
   </header>
   <ul class="grid-container">
     <slot />
@@ -26,6 +30,7 @@ const { title } = Astro.props;
   }
 
   .grid-container {
+    margin-top: 1rem;
     display: flex;
     overflow: hidden;
     gap: 1rem;
@@ -34,6 +39,7 @@ const { title } = Astro.props;
 
   @media (min-width: 700px) {
     .grid-container {
+      margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
       gap: 2rem;
