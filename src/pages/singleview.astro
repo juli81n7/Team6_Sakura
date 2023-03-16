@@ -57,11 +57,6 @@ const data = await respons.json();
 </html>
 
 <style>
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 4rem;
-  }
   main > * {
     flex-basis: 100%;
   }
@@ -82,37 +77,65 @@ const data = await respons.json();
     border: var(--redborder);
     align-content: center;
     justify-items: center;
-    padding: 4rem;
   }
-  .eventinfo > * {
-  }
-  .infoknap {
-    margin-top: 2rem;
-  }
-  .miniinfo {
-    border: var(--redborder);
-    flex-shrink: 1;
-    align-self: flex-end;
+  @media (min-width 700px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 4rem;
+    }
+    main > * {
+      flex-basis: 100%;
+    }
+    h1 {
+      color: black;
+    }
+    .like {
+      position: absolute;
+      transform-origin: right;
+      top: 0%;
+      right: 0%;
+      width: 181px;
+    }
+    .eventinfo {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      border: var(--redborder);
+      align-content: center;
+      justify-items: center;
+      padding: 4rem;
+    }
+    .eventinfo > * {
+    }
+    .infoknap {
+      margin-top: 2rem;
+    }
+    .miniinfo {
+      border: var(--redborder);
+      flex-shrink: 1;
+      align-self: flex-end;
 
-    text-align: start;
-    line-height: 1.4rem;
-    margin-top: 1rem;
-  }
-  .miniinfo {
-    position: absolute;
-    bottom: -0.1%;
-    left: 80%;
-    padding: 0.5rem 1rem;
-    transform-origin: bottom;
-    width: 10rem;
-    background-color: var(--backgroundcolor);
-  }
-  .eventimg {
-    border: var(--redborder);
-  }
-  img {
-    align-self: stretch;
-    object-fit: cover;
-    height: 100%;
+      text-align: start;
+      line-height: 1.4rem;
+      margin-top: 1rem;
+    }
+    .miniinfo {
+      position: absolute;
+      bottom: -0.1%;
+      left: 80%;
+      padding: 0.5rem 1rem;
+      transform-origin: bottom;
+      width: 10rem;
+      background-color: var(--backgroundcolor);
+    }
+    .eventimg {
+      border: var(--redborder);
+    }
+    img {
+      align-self: stretch;
+      object-fit: cover;
+      height: 100%;
+    }
   }
 </style>
