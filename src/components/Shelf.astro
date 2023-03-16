@@ -1,13 +1,17 @@
 ---
+import Buttonshelf from "./Buttonshelf.astro";
+import Smallbtn from "./Smallbtn.astro";
 const { title } = Astro.props;
 ---
 
 <section>
   <header>
-    <h2>
-      <a href="#0">{title}</a>
-    </h2>
-    <a href="#0">Show all</a>
+    <h2>{title}</h2>
+    <Buttonshelf>
+      <Smallbtn title="Main stage" />
+      <Smallbtn title="Second stage" />
+      <Smallbtn title="On the lawn" />
+    </Buttonshelf>
   </header>
   <ul class="grid-container">
     <slot />
@@ -16,33 +20,31 @@ const { title } = Astro.props;
 
 <style>
   section {
-    display: grid;
-    grid-auto-rows: min-content;
-    gap: var(--space-md);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  header > a {
-    font-size: var(--font-size-small);
-    font-weight: 500;
-  }
-
-  h2 a {
-    color: inherit;
-  }
-
-  a:hover {
-    text-decoration: underline;
+  h2 {
+    text-decoration: none;
+    margin-left: 2rem;
   }
 
   .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: var(--space-lg);
+    margin-top: 1rem;
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+    overflow: scroll;
+  }
+
+  @media (min-width: 700px) {
+    .grid-container {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
+      gap: 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
   }
 </style>

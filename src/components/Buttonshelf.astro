@@ -1,0 +1,18 @@
+---
+import Smallbtn from "./Smallbtn.astro";
+---
+
+<div class="selector">
+  <slot />
+</div>
+
+<style>
+  .selector {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smallgap);
+    margin-right: 2rem;
+  }
+</style>
