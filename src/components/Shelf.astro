@@ -34,9 +34,8 @@ const { title } = Astro.props;
     display: flex;
     overflow: hidden;
     gap: 1rem;
+    scroll-snap-type: x mandatory;
     overflow: scroll;
-    scroll-snap-type: mandatory;
-    scroll-snap-points-x: repeat(100vh);
   }
 
   @media (min-width: 700px) {
