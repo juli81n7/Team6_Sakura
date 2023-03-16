@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import Topnav from "../components/Topnav.astro";
 import "../styles/styles.css";
 ---
 
@@ -15,4 +16,54 @@ import "../styles/styles.css";
   </head>
 </html>
 
+<Topnav />
+<main>
+  <section class="box">
+    <div>
+      <h2>About our festival</h2>
+      <p>Welcome to the Sakura Festival in Copenhagen! Our annual festival celebrates the beauty of the Japanese cherry blossom season and offers visitors a glimpse into Japanese culture and traditions.</p>
+      <br /><p>Our festival offers a variety of activities for visitors of all ages, including traditional Japanese music and dance performances, tea ceremonies, flower arrangement displays, and food stalls serving authentic Japanese cuisine.</p>
+      <br /><p>The Sakura Festival in Copenhagen is more than just a celebration of nature's beauty. <br /> It also serves as a bridge between Danish and Japanese cultures, promoting cultural exchange and understanding between the two nations.</p>
+    </div><img src="/public/images/about1_img.webp" alt="about" />
+  </section>
+
+  <section class="box">
+    <div>
+      <h2>About us</h2>
+      <p>The Committee of the Copenhagen Sakura Festival was established in February, 2008 to arrange the cultural event Copenhagen Sakura Festival with the help of the Japanese Embassy in Denmark, the Municipality of Copenhagen and other Japan-related cultural and private organizations.</p>
+      <br /><p>The original idea came from the noble deed of donation of 200 cherry blossom (Sakura) trees by Mr. Seiichi Takaki, President of Andersen Institute of Bread & Life, the holding company of Andersen Group of Hiroshima City, and the employees of the company. <br /> <br /> Mr. Takaki is Honorary Consul of Denmark and he was appointed to the honorable position of ambassador of H.C. Andersen on the occasion of the 200th anniversary of H.C. Andersen’s birthday in 2005.</p>
+    </div><img src="/public/images/about2_img.webp" alt="about" />
+  </section>
+</main>
 <Footer />
+
+<style>
+  .box {
+    border: var(--redborder);
+    margin: 2rem;
+  }
+
+  .box > * {
+    padding: 2rem;
+  }
+
+  img {
+    align-self: stretch;
+    object-fit: cover;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+  html {
+    background-color: var(--backgroundcolor);
+  }
+
+  @media (min-width: 700px) {
+    .box {
+      margin: 7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
