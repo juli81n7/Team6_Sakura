@@ -4,6 +4,7 @@ import Card from "../components/Card.astro";
 import Largebtn from "../components/Largebtn.astro";
 import Shelf from "../components/Shelf.astro";
 import Smallbtn from "../components/Smallbtn.astro";
+import Topnav from "../components/Topnav.astro";
 import "../styles/styles.css";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
@@ -25,11 +26,11 @@ const data = await respons.json();
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://use.typekit.net/qqk5mpc.css" />
     <meta name="generator" content={Astro.generator} />
-
     <title>forside</title>
   </head>
 
   <body>
+    <Topnav />
     <ul>
       <a href="faq"><li>FAQ</li></a>
 
@@ -37,17 +38,19 @@ const data = await respons.json();
       <a href="program"><li>Program</li></a>
       <a href="singleview"><li>singleview</li></a>
     </ul>
-    <div>
-      <Smallbtn />
-    </div>
-    <br />
-    <div>
-      <Largebtn />
+    <img class="image3" src="../public/images/landingpagetext.svg" alt="baggrund" />
+    <div class="parent">
+      <img class="image1" src="../public/images/landingpagebg.png" alt="baggrund" />
+
+      <img class="image2" src="../public/images/landingpagefg.png" alt="baggrund" />
     </div>
   </body>
 </html>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
   main {
     display: flex;
     justify-content: center;
@@ -56,5 +59,40 @@ const data = await respons.json();
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+  }
+
+  img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  /* .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  } */
+  .image1 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+  }
+  .image2 {
+    position: absolute;
+    left: 0;
+    top: auto;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    object-fit: cover;
+  }
+  .image3 {
+    position: sticky;
+    z-index: 2;
+    top: 20px;
+    height: 394px;
+    object-position: center;
   }
 </style>
