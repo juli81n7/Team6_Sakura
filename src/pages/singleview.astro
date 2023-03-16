@@ -2,6 +2,18 @@
 import "../styles/styles.css";
 import Readme from "../components/Readme.astro";
 import Topnav from "../components/Topnav.astro";
+import Footer from "../components/Footer.astro";
+import Likebtn from "../components/Likebtn.astro";
+const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
+
+const options = {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3Nzc0NTgsImV4cCI6MTk5NDM1MzQ1OH0.8v-p9C_alBTmibzL_qtGCNqtAkcNRGL5TGvI2UFHXH0",
+  },
+};
+
+const respons = await fetch(url, options);
+const data = await respons.json();
 ---
 
 <html lang="en">
@@ -14,7 +26,21 @@ import Topnav from "../components/Topnav.astro";
 
     <title>forside</title>
   </head>
-  <Topnav />
-  <Readme />
-
+  <body>
+    <Topnav />
+    <main>
+      <img src="" alt="" />
+      <div>
+        <Likebtn />
+        <h3></h3>
+        <h1></h1>
+        <p></p>
+        <Readme />
+        <div>
+          <p></p>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
