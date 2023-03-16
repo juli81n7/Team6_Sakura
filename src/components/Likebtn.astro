@@ -1,5 +1,6 @@
 <div class="likebtn" id="like">
   <p class="added hide">Added to your program</p>
+
   <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M12.4561 21.2239L12.4561 21.2239L12.4516 21.2202C7.67113 17.3291 4.67676 14.7323 2.87249 12.5653C1.09454 10.43 0.5 8.74562 0.5 6.66C0.5 3.23614 3.23614 0.5 6.66 0.5C9.46819 0.5 11.0427 2.05712 12.2063 3.36618L12.58 3.7866L12.9537 3.36618C14.1173 2.05712 15.6918 0.5 18.5 0.5C21.9239 0.5 24.66 3.23614 24.66 6.66C24.66 8.74562 24.0655 10.43 22.2875 12.5653C20.4832 14.7323 17.4889 17.3291 12.7084 21.2202L12.7083 21.2202L12.7039 21.2239L12.58 21.3271L12.4561 21.2239Z"
@@ -21,6 +22,7 @@
     align-items: center;
     gap: 0.5rem;
     z-index: 2;
+    overflow: hidden;
   }
 
   svg {
@@ -41,18 +43,46 @@
     font-style: normal;
     font-size: 0.7rem !important;
     color: var(--backgroundcolor);
-    margin: 0;
+    margin-left: -8.6rem;
     z-index: 2;
   }
+  .likebtn.activated > p.added {
+    display: block;
+    animation-name: slidein;
+    animation-duration: 2s;
+  }
+  .activated > p.removed {
+    display: block;
+    animation-name: slidein;
+    animation-duration: 2s;
+  }
 
-  p.hide {
+  @keyframes slidein {
+    0% {
+    }
+
+    30% {
+      margin-left: 0;
+    }
+
+    65% {
+      margin-left: 0;
+    }
+
+    100% {
+      margin-left: -8.6rem;
+    }
+  }
+
+  .hide {
     display: none;
   }
 </style>
 
 <script>
   const likes = document.querySelectorAll(".likebtn");
-  const added = document.querySelector(".added");
+
+  const added = document.querySelectorAll(".added");
 
   likes.forEach((hjerte) => {
     hjerte.addEventListener("click", function () {
