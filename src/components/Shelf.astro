@@ -1,10 +1,13 @@
 ---
+import Buttonshelf from "./Buttonshelf.astro";
+import Smallbtn from "./Smallbtn.astro";
 const { title } = Astro.props;
 ---
 
 <section>
   <header>
     <h2>{title}</h2>
+    <Buttonshelf name="Main stage" name="Main stage" />
   </header>
   <ul class="grid-container">
     <slot />

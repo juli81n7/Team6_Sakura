@@ -52,9 +52,9 @@ const data = await respons.json();
               imgPath={"../public/images/" + `${item.image_path}`}
               event_by={item.event_firm}
               place={item.place}
+              from={item.time_from.substring(0, 5)}
+              to={item.time_from.substring(0, 5)}
               day={item.day}
-              from={item.time_from.slice(0, 5)}
-              to={item.time_from.slice(0, 5)}
             />
           ))
         }
