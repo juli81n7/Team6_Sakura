@@ -34,7 +34,9 @@ const data = await respons.json();
         <img src="public/images/wakaido.png" alt="" />
       </div>
       <div class="eventinfo">
-        <Likebtn />
+        <div class="like">
+          <Likebtn />
+        </div>
         <div class="prioinfo">
           <h3>Saidokan</h3>
           <h1>Wadaiko</h1>
@@ -63,26 +65,54 @@ const data = await respons.json();
   main > * {
     flex-basis: 100%;
   }
-
+  h1 {
+    color: black;
+  }
+  .like {
+    position: absolute;
+    transform-origin: right;
+    top: 0%;
+    right: 0%;
+    width: 181px;
+  }
   .eventinfo {
     display: flex;
+    position: relative;
     flex-direction: column;
     border: var(--redborder);
+    align-content: center;
+    justify-items: center;
+    padding: 4rem;
   }
-
+  .eventinfo > * {
+  }
+  .infoknap {
+    margin-top: 2rem;
+  }
   .miniinfo {
     border: var(--redborder);
     flex-shrink: 1;
     align-self: flex-end;
-    margin-top: 3rem;
+
+    text-align: start;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+  }
+  .miniinfo {
+    position: absolute;
+    bottom: -0.1%;
+    left: 80%;
+    padding: 0.5rem 1rem;
+    transform-origin: bottom;
+    width: 10rem;
+    background-color: var(--backgroundcolor);
   }
   .eventimg {
     border: var(--redborder);
-
-    flex-grow: 200;
   }
   img {
     align-self: stretch;
     object-fit: cover;
+    height: 100%;
   }
 </style>
