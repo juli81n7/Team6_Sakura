@@ -8,7 +8,7 @@ const { events, day } = Astro.props;
   {
     events.map((item) => (
       <Card
-        link={`undersider/${item.slug}`}
+        link={"/undersider/" + item.slug}
         cla={item.class}
         title={item.name}
         description={item.description.slice(0, 150) + "..."}
