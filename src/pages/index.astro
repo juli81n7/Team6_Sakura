@@ -43,7 +43,7 @@ const data = await respons.json();
     </ul>
 
     <div class="parent">
-      <img class="image1" src="../public/images/landingpagebg.png" alt="baggrund" />
+      <img class="image1" src="../public/images/landingpage.png" alt="baggrund" />
       <img class="image3" src="../public/images/landingpagetext.svg" alt="baggrund" />
       <img class="image2" src="../public/images/landingpagefg.png" alt="baggrund" />
     </div>
@@ -54,6 +54,8 @@ const data = await respons.json();
       <Largebtn />
       <Largebtn />
     </Fpshelf>
+
+    <Shelf />
 
     <Footer />
   </body>
@@ -73,6 +75,9 @@ const data = await respons.json();
     gap: 1rem;
   }
 
+  body {
+    background-color: var(--backgroundcolor);
+  }
   .fpknapper {
     gap: 100px;
   }
@@ -87,6 +92,7 @@ const data = await respons.json();
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    position: relative;
   }
   .image1 {
     grid-column: 1/1;
@@ -105,9 +111,10 @@ const data = await respons.json();
   .image3 {
     position: sticky;
     z-index: 2;
-    top: 120px;
+    top: -120px;
     height: 394px;
     grid-column: 1/1;
     grid-row: 1/1;
+    padding-top: 4rem;
   }
 </style>
