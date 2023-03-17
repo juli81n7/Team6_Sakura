@@ -1,9 +1,9 @@
 ---
-const { title, imgPath, description, event_by, place, day, from, to } = Astro.props;
+const { title, imgPath, description, event_by, place, day, time, cla } = Astro.props;
 import Likebtn from "../components/Likebtn.astro";
 ---
 
-<li>
+<li class={cla}>
   <article>
     <div class="image_container">
       <Likebtn />
@@ -24,13 +24,7 @@ import Likebtn from "../components/Likebtn.astro";
         {day}
       </p>
       <p class="time">
-        <span class="from">
-          {from}
-        </span>
-        -
-        <span class="to">
-          {to}
-        </span>
+        {time}
       </p>
     </div>
     <a href="#">
@@ -148,6 +142,10 @@ import Likebtn from "../components/Likebtn.astro";
   button:hover {
     background-color: var(--secondary);
     transition: 250ms ease-in-out;
+  }
+
+  .hide {
+    display: none;
   }
 
   @media (max-width: 700px) {
