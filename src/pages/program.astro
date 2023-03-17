@@ -50,7 +50,7 @@ const booth = data.filter((event) => event.type == "booth");
       </p>
 
       <div class="selector">
-        {data.map((item) => <Smallbtn title={item.name} />)}
+        {data.map((item) => <Smallbtn title={item.name} link={"/undersider/" + item.slug} />)}
       </div>
 
       <Kategori events={saturdayevents} day={"Saturday"} />
