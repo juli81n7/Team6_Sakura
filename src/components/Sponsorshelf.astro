@@ -1,0 +1,43 @@
+---
+import Buttonshelf from "./Buttonshelf.astro";
+import Smallbtn from "./Smallbtn.astro";
+const { title } = Astro.props;
+---
+
+<section>
+  <ul class="grid-container">
+    <slot />
+  </ul>
+</section>
+
+<style>
+  section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  .grid-container {
+    margin-top: 1rem;
+    display: flex;
+    overflow: hidden;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    overflow: scroll;
+  }
+
+  /* @media (min-width: 700px) {
+    .grid-container {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
+      gap: 2rem;
+      margin-left: 1rem;
+      margin-right: 2rem;
+    }
+  } */
+</style>

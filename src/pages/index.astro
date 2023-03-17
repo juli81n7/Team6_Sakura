@@ -9,6 +9,8 @@ import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
 import Buttonshelf from "../components/Buttonshelf.astro";
 import Fpshelf from "../components/Fpshelf.astro";
+import Fpcardshelf from "../components/Fpcardshelf.astro";
+import Sponsorshelf from "../components/Sponsorshelf.astro";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
 
@@ -31,90 +33,118 @@ const data = await respons.json();
     <meta name="generator" content={Astro.generator} />
     <title>forside</title>
   </head>
+  <main>
+    <body>
+      <Topnav />
 
-  <body>
-    <Topnav />
-    <ul>
-      <a href="faq"><li>FAQ</li></a>
+      <div class="parent">
+        <img class="image1" src="../public/images/landingpage.png" alt="baggrund" />
+        <img class="image3" src="../public/images/landingpagetext.svg" alt="baggrund" />
+        <img class="image2" src="../public/images/landingpagefg.png" alt="baggrund" />
+      </div>
 
-      <a href="about"><li>About</li></a>
-      <a href="program"><li>Program</li></a>
-      <a href="singleview"><li>singleview</li></a>
-    </ul>
+      <section>
+        <br /><br /><br />
+        <Fpshelf>
+          <Largebtn />
+          <Largebtn />
+          <Largebtn />
+          <Largebtn />
+        </Fpshelf>
 
-    <div class="parent">
-      <img class="image1" src="../public/images/landingpage.png" alt="baggrund" />
-      <img class="image3" src="../public/images/landingpagetext.svg" alt="baggrund" />
-      <img class="image2" src="../public/images/landingpagefg.png" alt="baggrund" />
-    </div>
+        <Fpcardshelf />
 
-    <Fpshelf>
-      <Largebtn />
-      <Largebtn />
-      <Largebtn />
-      <Largebtn />
-    </Fpshelf>
+        <Sponsorshelf>
+          <div>
+            <img class="sponsor" src="../images/sponsor/dnp_png.png" alt="dnp" />
+            <img class="sponsor" src="../images/sponsor/torm_png.webp" alt="torm" />
+            <img class="sponsor" src="../images/sponsor/nec_png.png" alt="nec" />
+            <img class="sponsor" src="../images/sponsor/toyota_png.png" alt="toyota" />
+          </div>
+        </Sponsorshelf>
 
-    <Shelf />
+        <!-- <div class="sponsorgrid_container">
+          <div class="sponsorgrid">
+            <img src="../images/sponsor/dnp_png.png" alt="dnp" />
+            <img src="../images/sponsor/torm_png.webp" alt="torm" />
+            <img src="../images/sponsor/nec_png.png" alt="nec" />
+            <img src="../images/sponsor/toyota_png.png" alt="toyota" />
+          </div>
+        </div> -->
 
-    <Footer />
-  </body>
+        <Footer />
+      </section>
+    </body>
+  </main>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--backgroundcolor);
+    }
+    .fpknapper {
+      gap: 100px;
+    }
+    img {
+      border: 0;
+      max-width: 100%;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .parent {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      position: relative;
+    }
+    .image1 {
+      grid-column: 1/1;
+      grid-row: 1/1;
+      z-index: 1;
+      width: 100%;
+      object-fit: cover;
+    }
+    .image2 {
+      grid-column: 1/1;
+      grid-row: 1/1;
+      z-index: 3;
+      width: 100%;
+      object-fit: cover;
+    }
+    @media (min-width: 945px) {
+      .image3 {
+        position: fixed;
+        margin-top: 4rem;
+        z-index: 2;
+        height: 450px;
+        grid-column: 1/1;
+        grid-row: 1/1;
+        padding-top: 4rem;
+      }
+    }
+    @media (max-width: 944px) {
+      .image3 {
+        height: 300px;
+        z-index: 2;
+        grid-column: 1/1;
+        grid-row: 1/1;
+        padding-top: 20px;
+      }
+    }
+    section {
+      position: relative;
+      z-index: 3;
+      background-color: var(--backgroundcolor);
+    }
+
+    .sponsor {
+      max-width: 120px;
+    }
+  </style>
+
+
 </html>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  main {
-    display: flex;
-    justify-content: center;
-  }
-  .grid_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-  }
-
-  body {
-    background-color: var(--backgroundcolor);
-  }
-  .fpknapper {
-    gap: 100px;
-  }
-  img {
-    border: 0;
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-  }
-
-  .parent {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    position: relative;
-  }
-  .image1 {
-    grid-column: 1/1;
-    grid-row: 1/1;
-    z-index: 1;
-    width: 100%;
-    object-fit: cover;
-  }
-  .image2 {
-    grid-column: 1/1;
-    grid-row: 1/1;
-    z-index: 3;
-    width: 100%;
-    object-fit: cover;
-  }
-  .image3 {
-    position: sticky;
-    z-index: 2;
-    top: -120px;
-    height: 394px;
-    grid-column: 1/1;
-    grid-row: 1/1;
-    padding-top: 4rem;
-  }
-</style>
