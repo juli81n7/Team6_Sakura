@@ -21,6 +21,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: var(--backgroundcolor);
+}
 
 img {
   width: 100%;
@@ -81,6 +84,7 @@ button {
   font-weight: 600;
   font-style: normal;
   font-size: 1.125rem;
+  cursor: pointer;
 }
 
 a {
