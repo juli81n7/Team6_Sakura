@@ -6,7 +6,7 @@ import Footer from "../../components/Footer.astro";
 import Likebtn from "../../components/Likebtn.astro";
 import Card from "../../components/Card.astro";
 export async function getStaticPaths() {
-  const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
+  const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
   const options = {
     headers: {
@@ -43,7 +43,7 @@ const { item } = Astro.props;
         <div class="like">
           <Likebtn />
         </div>
-        <img src="public/images/wakaido.png" alt="" />
+        <img src={"../public/images/" + `${item.image_path}`} alt="" />
       </div>
       <div class="eventinfo">
         <div class="prioinfo">
