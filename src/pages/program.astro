@@ -85,17 +85,7 @@ const booth = data.filter((event) => event.type == "booth");
     gap: var(--smallgap);
     margin-right: 2rem;
   }
+  .hide {
+    display: none;
+  }
 </style>
-
-<script>
-  const sortmainstage = document.querySelector(".main_stage_sorter");
-  const mainstagecard = document.querySelector(".main_stage_card");
-  const secondstagecard = document.querySelector(".main_stage_card");
-  const lawnstagecard = document.querySelector(".main_stage_card");
-
-  sortmainstage.addEventListener("click", () => {
-    sortmainstage.classList.add(".active");
-    secondstagecard.classList.add(".hide");
-    lawnstagecard.classList.add(".hide");
-  });
-</script>
