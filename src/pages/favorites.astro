@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
 import Kategori from "../components/Kategori.astro";
 
-const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/favorite";
+const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
 const options = {
   headers: {
@@ -17,10 +17,10 @@ const options = {
 const respons = await fetch(url, options);
 const data = await respons.json();
 
-const saturdayevents = data.filter((event) => event.day == "Saturday");
-const sundayevents = data.filter((event) => event.day == "Sunday");
-const food = data.filter((event) => event.type == "food");
-const booth = data.filter((event) => event.type == "booth");
+const saturdayevents = data.filter((event) => event.day == "Saturday" && event.liked === true);
+const sundayevents = data.filter((event) => event.day == "Sunday" && event.liked === true);
+const food = data.filter((event) => event.type == "food" && event.liked === true);
+const booth = data.filter((event) => event.type == "booth" && event.liked === true);
 ---
 
 <html lang="en">

@@ -1,12 +1,12 @@
 ---
-const { title, imgPath, description, event_by, place, day, time, cla, link, item } = Astro.props;
+const { title, imgPath, description, event_by, place, day, time, cla, link, item, liked } = Astro.props;
 import Likebtn from "../components/Likebtn.astro";
 ---
 
 <li class={cla}>
   <article>
     <div class="image_container">
-      <Likebtn item={item} />
+      <Likebtn item={item} liked={liked} />
       <img src={imgPath} />
     </div>
     <h5>{event_by}</h5>
