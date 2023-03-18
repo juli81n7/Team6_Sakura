@@ -1,16 +1,16 @@
 ---
 import Buttonshelf from "./Buttonshelf.astro";
 import Smallbtn from "./Smallbtn.astro";
-const { title } = Astro.props;
+const { title, btnclass } = Astro.props;
 ---
 
 <section>
   <header>
     <h2>{title}</h2>
     <Buttonshelf>
-      <button class="smallbutton sortmainstage">Main stage</button>
-      <button class="smallbutton sortsecondstage">Second stage</button>
-      <button class="smallbutton sortthelawn">On the lawn</button>
+      <button id={btnclass} class="smallbutton sortmainstage">Main stage</button>
+      <button id={btnclass} class="smallbutton sortsecondstage">Second stage</button>
+      <button id={btnclass} class="smallbutton sortthelawn">On the lawn</button>
     </Buttonshelf>
   </header>
 </section>

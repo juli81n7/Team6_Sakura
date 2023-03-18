@@ -1,19 +1,17 @@
-const sortmainstage = document.querySelector(".sortmainstage");
-const sortsecondstage = document.querySelector(".sortsecondstage");
-const sortthelawn = document.querySelector(".sortthelawn");
-
+const sortmainstagesaturday = document.querySelector(".sortmainstage#Saturday");
+const sortsecondstagesaturday = document.querySelector(".sortsecondstage#Saturday");
+const sortthelawnsaturday = document.querySelector(".sortthelawn#Saturday");
 const mainstagecardsaturday = document.querySelectorAll(".main_stage_card.Saturday");
 const secondstagecardsaturday = document.querySelectorAll(".second_stage_card.Saturday");
-
 const lawnstagecardsaturday = document.querySelectorAll(".on_the_lawn_card.Saturday");
 
-sortmainstage.addEventListener("click", () => {
+sortmainstagesaturday.addEventListener("click", () => {
   console.log("hej fra js");
 
-  if (sortmainstage.classList.contains("active")) {
-    sortmainstage.classList.remove("active");
-    sortsecondstage.classList.remove("active");
-    sortthelawn.classList.remove("active");
+  if (sortmainstagesaturday.classList.contains("active")) {
+    sortmainstagesaturday.classList.remove("active");
+    sortsecondstagesaturday.classList.remove("active");
+    sortthelawnsaturday.classList.remove("active");
 
     mainstagecardsaturday.forEach((card) => {
       card.classList.remove("hide");
@@ -27,9 +25,9 @@ sortmainstage.addEventListener("click", () => {
       one.classList.remove("hide");
     });
   } else {
-    sortmainstage.classList.add("active");
-    sortsecondstage.classList.remove("active");
-    sortthelawn.classList.remove("active");
+    sortmainstagesaturday.classList.add("active");
+    sortsecondstagesaturday.classList.remove("active");
+    sortthelawnsaturday.classList.remove("active");
     mainstagecardsaturday.forEach((card) => {
       card.classList.remove("hide");
     });
@@ -43,13 +41,13 @@ sortmainstage.addEventListener("click", () => {
   }
 });
 
-sortsecondstage.addEventListener("click", () => {
+sortsecondstagesaturday.addEventListener("click", () => {
   console.log("hej fra js");
 
-  if (sortsecondstage.classList.contains("active")) {
-    sortmainstage.classList.remove("active");
-    sortsecondstage.classList.remove("active");
-    sortthelawn.classList.remove("active");
+  if (sortsecondstagesaturday.classList.contains("active")) {
+    sortmainstagesaturday.classList.remove("active");
+    sortsecondstagesaturday.classList.remove("active");
+    sortthelawnsaturday.classList.remove("active");
 
     mainstagecardsaturday.forEach((card) => {
       card.classList.remove("hide");
@@ -63,9 +61,9 @@ sortsecondstage.addEventListener("click", () => {
       one.classList.remove("hide");
     });
   } else {
-    sortmainstage.classList.remove("active");
-    sortsecondstage.classList.add("active");
-    sortthelawn.classList.remove("active");
+    sortmainstagesaturday.classList.remove("active");
+    sortsecondstagesaturday.classList.add("active");
+    sortthelawnsaturday.classList.remove("active");
     mainstagecardsaturday.forEach((card) => {
       card.classList.add("hide");
     });
@@ -79,13 +77,13 @@ sortsecondstage.addEventListener("click", () => {
   }
 });
 
-sortthelawn.addEventListener("click", () => {
+sortthelawnsaturday.addEventListener("click", () => {
   console.log("hej fra js");
 
-  if (sortthelawn.classList.contains("active")) {
-    sortmainstage.classList.remove("active");
-    sortsecondstage.classList.remove("active");
-    sortthelawn.classList.remove("active");
+  if (sortthelawnsaturday.classList.contains("active")) {
+    sortmainstagesaturday.classList.remove("active");
+    sortsecondstagesaturday.classList.remove("active");
+    sortthelawnsaturday.classList.remove("active");
 
     mainstagecardsaturday.forEach((card) => {
       card.classList.remove("hide");
@@ -99,9 +97,9 @@ sortthelawn.addEventListener("click", () => {
       one.classList.remove("hide");
     });
   } else {
-    sortmainstage.classList.remove("active");
-    sortsecondstage.classList.remove("active");
-    sortthelawn.classList.add("active");
+    sortmainstagesaturday.classList.remove("active");
+    sortsecondstagesaturday.classList.remove("active");
+    sortthelawnsaturday.classList.add("active");
     mainstagecardsaturday.forEach((card) => {
       card.classList.add("hide");
     });
@@ -110,6 +108,121 @@ sortthelawn.addEventListener("click", () => {
     });
 
     lawnstagecardsaturday.forEach((one) => {
+      one.classList.remove("hide");
+    });
+  }
+});
+
+const sortmainstagesunday = document.querySelector(".sortmainstage#Sunday");
+const sortsecondstagesunday = document.querySelector(".sortsecondstage#Sunday");
+const sortthelawnsunday = document.querySelector(".sortthelawn#Sunday");
+const mainstagecardsunday = document.querySelectorAll(".main_stage_card.Sunday");
+const secondstagecardsunday = document.querySelectorAll(".second_stage_card.Sunday");
+const lawnstagecardsunday = document.querySelectorAll(".on_the_lawn_card.Sunday");
+
+sortmainstagesunday.addEventListener("click", () => {
+  console.log("hej fra js");
+
+  if (sortmainstagesunday.classList.contains("active")) {
+    sortmainstagesunday.classList.remove("active");
+    sortsecondstagesunday.classList.remove("active");
+    sortthelawnsunday.classList.remove("active");
+
+    mainstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    secondstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
+      one.classList.remove("hide");
+    });
+  } else {
+    sortmainstagesunday.classList.add("active");
+    sortsecondstagesunday.classList.remove("active");
+    sortthelawnsunday.classList.remove("active");
+    mainstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+    secondstagecardsunday.forEach((card) => {
+      card.classList.add("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
+      one.classList.add("hide");
+    });
+  }
+});
+
+sortsecondstagesunday.addEventListener("click", () => {
+  console.log("hej fra js");
+
+  if (sortsecondstagesunday.classList.contains("active")) {
+    sortmainstagesunday.classList.remove("active");
+    sortsecondstagesunday.classList.remove("active");
+    sortthelawnsunday.classList.remove("active");
+
+    mainstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    secondstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
+      one.classList.remove("hide");
+    });
+  } else {
+    sortmainstagesunday.classList.remove("active");
+    sortsecondstagesunday.classList.add("active");
+    sortthelawnsunday.classList.remove("active");
+    mainstagecardsunday.forEach((card) => {
+      card.classList.add("hide");
+    });
+    secondstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
+      one.classList.add("hide");
+    });
+  }
+});
+
+sortthelawnsunday.addEventListener("click", () => {
+  console.log("hej fra js");
+
+  if (sortthelawnsunday.classList.contains("active")) {
+    sortmainstagesunday.classList.remove("active");
+    sortsecondstagesunday.classList.remove("active");
+    sortthelawnsunday.classList.remove("active");
+
+    mainstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    secondstagecardsunday.forEach((card) => {
+      card.classList.remove("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
+      one.classList.remove("hide");
+    });
+  } else {
+    sortmainstagesunday.classList.remove("active");
+    sortsecondstagesunday.classList.remove("active");
+    sortthelawnsunday.classList.add("active");
+    mainstagecardsunday.forEach((card) => {
+      card.classList.add("hide");
+    });
+    secondstagecardsunday.forEach((card) => {
+      card.classList.add("hide");
+    });
+
+    lawnstagecardsunday.forEach((one) => {
       one.classList.remove("hide");
     });
   }

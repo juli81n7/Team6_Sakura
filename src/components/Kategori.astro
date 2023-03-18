@@ -4,7 +4,7 @@ import Card from "./Card.astro";
 const { events, day } = Astro.props;
 ---
 
-<Shelf title={day}>
+<Shelf title={day} btnclass={day}>
   {
     events.map((item) => (
       <Card
