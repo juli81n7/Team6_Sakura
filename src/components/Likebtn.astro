@@ -86,6 +86,16 @@ const { item, liked } = Astro.props;
   }
 </style>
 
-<script></script>
+<script>
+  const likes = document.querySelectorAll(".likebtn");
+
+  const added = document.querySelectorAll(".added");
+
+  likes.forEach((hjerte) => {
+    hjerte.addEventListener("click", function () {
+      this.classList.toggle("activated");
+    });
+  });
+</script>
 
 <script src="../pages/scripts/favorite.js"></script>
