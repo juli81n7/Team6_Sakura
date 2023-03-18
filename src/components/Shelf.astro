@@ -7,7 +7,7 @@ const { title, btnclass } = Astro.props;
 <section>
   <header>
     <h2>{title}</h2>
-    <Buttonshelf>
+    <Buttonshelf cla={btnclass}>
       <button id={btnclass} class="smallbutton sortmainstage">Main stage</button>
       <button id={btnclass} class="smallbutton sortsecondstage">Second stage</button>
       <button id={btnclass} class="smallbutton sortthelawn">On the lawn</button>

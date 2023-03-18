@@ -1,8 +1,10 @@
 ---
 import Smallbtn from "./Smallbtn.astro";
+
+const { cla } = Astro.props;
 ---
 
-<div>
+<div class={cla}>
   <slot />
 </div>
 
@@ -14,5 +16,10 @@ import Smallbtn from "./Smallbtn.astro";
     flex-wrap: wrap;
     gap: var(--smallgap);
     margin-right: 2rem;
+  }
+
+  .Food,
+  .Booths {
+    display: none;
   }
 </style>
