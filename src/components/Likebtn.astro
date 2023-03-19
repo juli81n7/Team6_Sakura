@@ -1,7 +1,11 @@
-<div class="likebtn" id="like">
+---
+const { item, liked } = Astro.props;
+---
+
+<div class="likebtn" data-id={item}>
   <p class="added hide">Added to your program</p>
 
-  <svg width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class={liked} width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M12.4561 21.2239L12.4561 21.2239L12.4516 21.2202C7.67113 17.3291 4.67676 14.7323 2.87249 12.5653C1.09454 10.43 0.5 8.74562 0.5 6.66C0.5 3.23614 3.23614 0.5 6.66 0.5C9.46819 0.5 11.0427 2.05712 12.2063 3.36618L12.58 3.7866L12.9537 3.36618C14.1173 2.05712 15.6918 0.5 18.5 0.5C21.9239 0.5 24.66 3.23614 24.66 6.66C24.66 8.74562 24.0655 10.43 22.2875 12.5653C20.4832 14.7323 17.4889 17.3291 12.7084 21.2202L12.7083 21.2202L12.7039 21.2239L12.58 21.3271L12.4561 21.2239Z"
       stroke="#F7F6F1"></path>
@@ -30,7 +34,10 @@
     z-index: 3;
   }
 
-  .likebtn.activated svg {
+  svg.true {
+    fill: var(--backgroundcolor);
+  }
+  .activated svg {
     fill: var(--backgroundcolor);
   }
   .likebtn.activated add {
@@ -81,7 +88,7 @@
 
 <script>
   const likes = document.querySelectorAll(".likebtn");
-
+  const svg = document.querySelectorAll("svg");
   const added = document.querySelectorAll(".added");
 
   likes.forEach((hjerte) => {
@@ -90,3 +97,5 @@
     });
   });
 </script>
+
+<script src="../pages/scripts/favorite.js"></script>

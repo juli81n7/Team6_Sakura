@@ -1,0 +1,31 @@
+---
+import Shelf from "./Shelf.astro";
+import Card from "./Card.astro";
+const { events, day } = Astro.props;
+---
+
+<Shelf title={day} btnclass={day}>
+  {
+    events.map((item) => (
+      <Card
+        link={"/undersider/" + item.slug}
+        cla={item.class + " " + item.day}
+        title={item.name}
+        description={item.description.slice(0, 150) + "..."}
+        imgPath={"../public/images/" + `${item.image_path}`}
+        event_by={item.event_firm}
+        place={item.place}
+        time={item.time}
+        day={item.day}
+        item={item.id}
+        liked={item.liked}
+      />
+    ))
+  }
+</Shelf>
+
+<style>
+  .hide {
+    display: none;
+  }
+</style>

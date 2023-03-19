@@ -1,5 +1,7 @@
 ---
 import Faq from "../components/Faq.astro";
+import Footer from "../components/Footer.astro";
+import Topnav from "../components/Topnav.astro";
 import "../styles/styles.css";
 ---
 
@@ -15,4 +17,31 @@ import "../styles/styles.css";
   </head>
 </html>
 
-<Faq />
+<Topnav />
+<main>
+  <section class="box">
+    <h1>FAQ</h1>
+    <div>
+      <h4>Need help?</h4>
+      <h5>Here is some often asked questions.</h5>
+    </div>
+    <div>
+      <Faq question={"Are there toilets available at the festival?"} answer={"Yes there is unisex toilets."} />
+      <Faq question={"Can I bring my own food?"} answer={"Yes you can enjoy your own food at our festival."} />
+      <Faq question={"Can i participate even though im not from Japan?"} answer={"Everyone is welcome at Sakura Festival."} />
+      <Faq question={"What does it cost to participate?"} answer={"It free to participate at the festival."} />
+    </div>
+  </section>
+  <Footer />
+
+  <style>
+    .box {
+      border: var(--redborder);
+      margin: 2rem;
+    }
+
+    .box > * {
+      padding: 1.5rem;
+    }
+  </style>
+</main>

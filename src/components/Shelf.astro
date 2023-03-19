@@ -1,22 +1,22 @@
 ---
 import Buttonshelf from "./Buttonshelf.astro";
 import Smallbtn from "./Smallbtn.astro";
-const { title } = Astro.props;
+const { title, btnclass } = Astro.props;
 ---
 
 <section>
   <header>
     <h2>{title}</h2>
-    <Buttonshelf>
-      <Smallbtn title="Main stage" />
-      <Smallbtn title="Second stage" />
-      <Smallbtn title="On the lawn" />
+    <Buttonshelf cla={btnclass}>
+      <button id={btnclass} class="smallbutton sortmainstage">Main stage</button>
+      <button id={btnclass} class="smallbutton sortsecondstage">Second stage</button>
+      <button id={btnclass} class="smallbutton sortthelawn">On the lawn</button>
     </Buttonshelf>
   </header>
-  <ul class="grid-container">
-    <slot />
-  </ul>
 </section>
+<ul class="grid-container">
+  <slot />
+</ul>
 
 <style>
   section {
@@ -48,4 +48,36 @@ const { title } = Astro.props;
       margin-right: 2rem;
     }
   }
+  .smallbutton {
+    background-color: var(--backgroundcolor);
+    height: 35px;
+    width: auto;
+    padding: 0px 15px;
+    border-radius: 0%;
+    border: var(--redborder);
+    font-family: roc-grotesk, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.8rem;
+  }
+
+  .smallbutton:hover {
+    background-color: var(--primary);
+    color: var(--backgroundcolor);
+    transition: 250ms ease-in-out;
+  }
+  a {
+    cursor: pointer;
+  }
+
+  .smallbutton.active {
+    background-color: var(--primary);
+    color: var(--backgroundcolor);
+  }
+
+  .hide {
+    display: none;
+  }
 </style>
+
+<script src="../pages/scripts/sort.js"></script>

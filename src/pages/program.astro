@@ -1,12 +1,12 @@
 ---
 import Topnav from "../components/Topnav.astro";
-import Card from "../components/Card.astro";
-import Shelf from "../components/Shelf.astro";
+
 import Smallbtn from "../components/Smallbtn.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/styles.css";
+import Kategori from "../components/Kategori.astro";
 
-const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
+const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
 const options = {
   headers: {
@@ -18,15 +18,15 @@ const options = {
 const respons = await fetch(url, options);
 const data = await respons.json();
 
-const urlfood = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/food";
+const saturdayevents = data.filter((event) => event.day == "Saturday");
+const saturdayeventsmainstage = data.filter((event) => event.day == "Saturday" && event.place == "Main stage");
+const saturdayeventssecondstage = data.filter((event) => event.day == "Saturday" && event.place == "Second stage");
+const saturdayeventsonthelawn = data.filter((event) => event.day == "Saturday" && event.place == "One the lawn");
 
-const responsfood = await fetch(urlfood, options);
-const datafood = await responsfood.json();
+const sundayevents = data.filter((event) => event.day == "Sunday");
 
-const urlbooth = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/booths";
-
-const responsbooth = await fetch(urlbooth, options);
-const databooth = await responsbooth.json();
+const food = data.filter((event) => event.type == "food");
+const booth = data.filter((event) => event.type == "booth");
 ---
 
 <html lang="en">
@@ -49,72 +49,14 @@ const databooth = await responsbooth.json();
       </p>
 
       <div class="selector">
-        {data.map((item) => <Smallbtn title={item.name} />)}
+        {data.map((item) => <Smallbtn title={item.name} link={"/undersider/" + item.slug} />)}
       </div>
 
-      <Shelf title={"Saturday"}>
-        {
-          data.map((item) => (
-            <Card
-              title={item.name}
-              description={item.description}
-              imgPath={"../public/images/" + `${item.image_path}`}
-              event_by={item.event_firm}
-              place={item.place}
-              from={item.time_from.substring(0, 5)}
-              to={item.time_from.substring(0, 5)}
-              day={item.day}
-            />
-          ))
-        }
-      </Shelf>
-      <Shelf title={"Sunday"}>
-        {
-          data.map((item) => (
-            <Card
-              title={item.name}
-              description={item.description}
-              imgPath={"../public/images/" + `${item.image_path}`}
-              event_by={item.event_firm}
-              place={item.place}
-              from={item.time_from.substring(0, 5)}
-              to={item.time_from.substring(0, 5)}
-              day={item.day}
-            />
-          ))
-        }
-      </Shelf>
+      <Kategori events={saturdayevents} day={"Saturday"} />
 
-      <Shelf title={"Food"}>
-        {
-          datafood.map((food) => (
-            <Card
-              title={food.name}
-              description={food.description.substring(0, 200) + "..."}
-              imgPath={"../public/images/" + `${food.image_path}`}
-              event_by={food.event_firm}
-              place={food.place}
-              from={food.time}
-              day={food.day}
-            />
-          ))
-        }
-      </Shelf>
-      <Shelf title={"Booths"}>
-        {
-          databooth.map((booth) => (
-            <Card
-              title={booth.name}
-              description={booth.description.substring(0, 200) + "..."}
-              imgPath={"../public/images/" + `${booth.image_path}`}
-              event_by={booth.event_firm}
-              place={booth.place}
-              from={booth.time}
-              day={booth.day}
-            />
-          ))
-        }
-      </Shelf>
+      <Kategori events={sundayevents} day={"Sunday"} />
+      <Kategori events={food} day={"Food"} />
+      <Kategori events={booth} day={"Booths"} />
     </main>
 
     <Footer />
@@ -142,6 +84,9 @@ const databooth = await responsbooth.json();
     gap: var(--smallgap);
     margin-right: 2rem;
   }
+  .hide {
+    display: none;
+  }
 </style>
 
-<script></script>
+<script src="../pages/scripts/favorite.js"></script>

@@ -1,0 +1,81 @@
+---
+import Topnav from "../components/Topnav.astro";
+
+import Footer from "../components/Footer.astro";
+import "../styles/styles.css";
+import Kategori from "../components/Kategori.astro";
+
+const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
+
+const options = {
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc3NzQ1OCwiZXhwIjoxOTk0MzUzNDU4fQ.h5wDHuVu4r6oxz_-8j86Y-E3AaQ3YTMcZpv40Pos_Ls",
+  },
+};
+
+const respons = await fetch(url, options);
+const data = await respons.json();
+
+const saturdayevents = data.filter((event) => event.day == "Saturday" && event.liked === true);
+const sundayevents = data.filter((event) => event.day == "Sunday" && event.liked === true);
+const food = data.filter((event) => event.type == "food" && event.liked === true);
+const booth = data.filter((event) => event.type == "booth" && event.liked === true);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://use.typekit.net/qqk5mpc.css" />
+    <meta name="generator" content={Astro.generator} />
+    <title>program</title>
+  </head>
+
+  <body>
+    <Topnav />
+    <main>
+      <h1>My program</h1>
+      <p>
+        We have made a great program for you to experience at this years festival. Get ready to get to know all sort of things from japanese culture. Get a quick look at alle of the event right here,
+        or go deeper into the events further down.
+      </p>
+
+      <Kategori events={saturdayevents} day={"Saturday"} />
+      <Kategori events={sundayevents} day={"Sunday"} />
+      <Kategori events={food} day={"Food"} />
+      <Kategori events={booth} day={"Booths"} />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  h1 {
+    margin-left: 1rem;
+  }
+  p {
+    margin-left: 1rem;
+    max-width: 70ch;
+  }
+
+  body {
+    background-color: var(--backgroundcolor);
+  }
+
+  .selector {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smallgap);
+    margin-right: 2rem;
+  }
+  .hide {
+    display: none;
+  }
+</style>
+
+<script src="../pages/scripts/favorite.js"></script>

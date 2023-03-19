@@ -31,20 +31,21 @@ const data = await respons.json();
     <Topnav />
     <main>
       <div class="eventimg">
-        <img src="public/images/wakaido.png" alt="" />
-      </div>
-      <div class="eventinfo">
         <div class="like">
           <Likebtn />
         </div>
+        <img src="public/images/wakaido.png" alt="" />
+      </div>
+      <div class="eventinfo">
         <div class="prioinfo">
           <h3>Saidokan</h3>
           <h1>Wadaiko</h1>
-          <p>There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances.</p>
+          <p>There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. There are Japanese percussion instruments that sound like rumbling thunder and lend themselves to powerful and dramatic stage performances. lorem*50</p>
         </div>
         <div class="infoknap">
           <Readme />
         </div>
+
         <div class="miniinfo">
           <p>Mainstage</p>
           <p>Saturday</p>
@@ -58,22 +59,38 @@ const data = await respons.json();
 
 <style>
   main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 4rem;
+    padding: 2rem 1rem;
   }
   main > * {
     flex-basis: 100%;
   }
-  h1 {
-    color: black;
-  }
+
   .like {
     position: absolute;
     transform-origin: right;
     top: 0%;
     right: 0%;
     width: 181px;
+  }
+
+  .eventinfo {
+    display: flex;
+
+    flex-direction: column;
+    border: var(--redborder);
+    align-content: center;
+    justify-items: center;
+  }
+  main > * {
+    flex-basis: 100%;
+  }
+  h1 {
+    color: black;
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
   }
   .eventinfo {
     display: flex;
@@ -82,37 +99,74 @@ const data = await respons.json();
     border: var(--redborder);
     align-content: center;
     justify-items: center;
-    padding: 4rem;
   }
-  .eventinfo > * {
-  }
-  .infoknap {
-    margin-top: 2rem;
-  }
-  .miniinfo {
-    border: var(--redborder);
-    flex-shrink: 1;
-    align-self: flex-end;
 
-    text-align: start;
-    line-height: 1.4rem;
-    margin-top: 1rem;
-  }
-  .miniinfo {
-    position: absolute;
-    bottom: -0.1%;
-    left: 80%;
-    padding: 0.5rem 1rem;
-    transform-origin: bottom;
-    width: 10rem;
-    background-color: var(--backgroundcolor);
-  }
   .eventimg {
     border: var(--redborder);
+    position: relative;
   }
   img {
     align-self: stretch;
     object-fit: cover;
     height: 100%;
+  }
+  .infoknap {
+    margin-block: 1rem;
+    margin-left: 1rem;
+  }
+  .prioinfo {
+    margin-top: 5rem;
+    margin-left: 1rem;
+  }
+  .miniinfo {
+    position: absolute;
+    border: var(--redborder);
+
+    align-self: flex-end;
+
+    transform-origin: top;
+    padding: 0.5rem 1rem;
+    text-align: start;
+    line-height: 1.4rem;
+
+    width: 10rem;
+    background-color: var(--backgroundcolor);
+  }
+  .like {
+    position: absolute;
+
+    width: 181px;
+  }
+  @media (min-width: 700px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 4rem;
+      padding: 0;
+    }
+    .prioinfo {
+      margin-top: 0rem;
+      margin-left: 0rem;
+    }
+    .like {
+      top: 0%;
+      right: 0%;
+    }
+    .infoknap {
+      margin-block: 1rem;
+      margin-left: 0rem;
+    }
+    .eventinfo {
+      padding: 4rem;
+    }
+
+    .miniinfo {
+      bottom: -0.1%;
+      left: 80%;
+
+      padding: 0.5rem 1rem;
+
+      width: 10rem;
+    }
   }
 </style>
