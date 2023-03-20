@@ -10,7 +10,7 @@ import "../styles/styles.css";
 import Buttonshelf from "../components/Buttonshelf.astro";
 import Fpshelf from "../components/Fpshelf.astro";
 import Fpcardshelf from "../components/Fpcardshelf.astro";
-import Sponsorshelf from "../components/Sponsorshelf.astro";
+import Sponsorshelf1 from "../components/Sponsorshelf1.astro";
 
 const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
 
@@ -51,26 +51,12 @@ const data = await respons.json();
           <Largebtn />
           <Largebtn />
         </Fpshelf>
-
+        <img class="line" src="../public/images/line1.png" alt="line" />
+        <h2 class="nyheder">News</h2>
         <Fpcardshelf />
-
-        <Sponsorshelf>
-          <div>
-            <img class="sponsor" src="../images/sponsor/dnp_png.png" alt="dnp" />
-            <img class="sponsor" src="../images/sponsor/torm_png.webp" alt="torm" />
-            <img class="sponsor" src="../images/sponsor/nec_png.png" alt="nec" />
-            <img class="sponsor" src="../images/sponsor/toyota_png.png" alt="toyota" />
-          </div>
-        </Sponsorshelf>
-
-        <!-- <div class="sponsorgrid_container">
-          <div class="sponsorgrid">
-            <img src="../images/sponsor/dnp_png.png" alt="dnp" />
-            <img src="../images/sponsor/torm_png.webp" alt="torm" />
-            <img src="../images/sponsor/nec_png.png" alt="nec" />
-            <img src="../images/sponsor/toyota_png.png" alt="toyota" />
-          </div>
-        </div> -->
+        <img class="line2" src="../public/images/line1.png" alt="line" />
+        <h2 class="nyheder">Sponsors</h2>
+        <Sponsorshelf1 />
 
         <Footer />
       </section>
@@ -88,11 +74,29 @@ const data = await respons.json();
     .fpknapper {
       gap: 100px;
     }
-    img {
+    /* img {
       border: 0;
       max-width: 100%;
       vertical-align: middle;
       display: inline-block;
+    } */
+
+    .line {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .line2 {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    .nyheder {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
     }
 
     .parent {
@@ -128,7 +132,6 @@ const data = await respons.json();
     }
     @media (max-width: 944px) {
       .image3 {
-        height: 300px;
         z-index: 2;
         grid-column: 1/1;
         grid-row: 1/1;
@@ -139,10 +142,6 @@ const data = await respons.json();
       position: relative;
       z-index: 3;
       background-color: var(--backgroundcolor);
-    }
-
-    .sponsor {
-      max-width: 120px;
     }
   </style>
 
