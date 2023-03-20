@@ -1,10 +1,8 @@
 ---
-const { title, link } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<a href={link}>
-  <button class="smallbutton sortmainstage">{title}</button>
-</a>
+<button class="smallbutton">{title}</button>
 
 <style>
   .smallbutton {

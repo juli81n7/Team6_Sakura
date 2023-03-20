@@ -1,18 +1,25 @@
 ---
 import Smallbtn from "./Smallbtn.astro";
+
+const { cla } = Astro.props;
 ---
 
-<div class="selector">
+<div class={cla}>
   <slot />
 </div>
 
 <style>
-  .selector {
+  div {
     margin-left: 1rem;
     margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: var(--smallgap);
     margin-right: 2rem;
+  }
+
+  .Food,
+  .Booths {
+    display: none;
   }
 </style>
