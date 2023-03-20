@@ -1,0 +1,61 @@
+---
+import Buttonshelf from "./Buttonshelf.astro";
+import Smallbtn from "./Smallbtn.astro";
+const { title } = Astro.props;
+---
+
+<section>
+  <div class="grid-container">
+    <img class="grid_item" src="../images/sponsor/dnp_png.png" alt="dnp" />
+    <img class="grid_item" src="../images/sponsor/torm_png.webp" alt="torm" />
+    <img class="grid_item" src="../images/sponsor/nec_png.png" alt="nec" />
+    <img class="grid_item" src="../images/sponsor/toyota_png.png" alt="toyota" />
+    <img class="grid_item" src="../images/sponsor/andersen_png.png" alt="andersen" />
+    <img class="grid_item" src="../images/sponsor/canon_png.png" alt="canon" />
+    <img class="grid_item" src="../images/sponsor/caservice_png.png" alt="caservice" />
+    <img class="grid_item" src="../images/sponsor/fujifilm_png.png" alt="fujifilm" />
+    <img class="grid_item" src="../images/sponsor/kyocera_png.png" alt="kyocera" />
+    <img class="grid_item" src="../images/sponsor/milestone_png.png" alt="milestone" />
+    <img class="grid_item" src="../images/sponsor/sticksandsushi_png.png" alt="sns" />
+    <img class="grid_item" src="../images/sponsor/tg_nordic.png" alt="tgnordic" />
+    <img class="grid_item" src="../images/sponsor/zpd_png.png" alt="zpd" />
+    <img class="grid_item" src="../images/sponsor/yashima_png.png" alt="yashima" />
+    <img class="grid_item" src="../images/sponsor/kk_png.png" alt="kk" />
+    <img class="grid_item" src="../images/sponsor/asiahouse_png.png" alt="asiahouse" />
+    <img class="grid_item" src="../images/sponsor/embassy_png.png" alt="embassy" />
+    <img class="grid_item" src="../images/sponsor/jdnet_png.png" alt="jdnet" />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 20px;
+  }
+  @media (min-width: 700px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      gap: 30px;
+      margin-left: 75px;
+      margin-right: 75px;
+      padding-bottom: 20px;
+    }
+  }
+</style>

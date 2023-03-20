@@ -63,7 +63,31 @@ import "../styles/styles.css";
     background-color: var(--secondary);
     transition: 250ms ease;
   }
+  ul a {
+    position: relative;
+  }
+  ul a:hover {
+    color: var(--secondary);
+    transition: 0.2s ease-in-out;
+    transform-origin: left;
+  }
+  ul a:after {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary);
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease-in;
+  }
+  ul a:hover:after {
+    transform: scaleX(1);
 
+    transform-origin: left;
+  }
   nav {
     display: flex;
     gap: var(--mediumgap);

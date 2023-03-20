@@ -9,8 +9,7 @@ export async function getStaticPaths() {
   const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
   const options = {
     headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3Nzc0NTgsImV4cCI6MTk5NDM1MzQ1OH0.8v-p9C_alBTmibzL_qtGCNqtAkcNRGL5TGvI2UFHXH0",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3Nzc0NTgsImV4cCI6MTk5NDM1MzQ1OH0.8v-p9C_alBTmibzL_qtGCNqtAkcNRGL5TGvI2UFHXH0",
     },
   };
 
@@ -38,6 +37,7 @@ const { item } = Astro.props;
   </head>
   <body>
     <Topnav />
+    <div class="backbtn"><a href="../program"><p>Back</p></a></div>
     <main>
       <div class="eventimg">
         <div class="like">
@@ -68,7 +68,7 @@ const { item } = Astro.props;
 
 <style>
   main {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
   main > * {
     flex-basis: 100%;
@@ -96,7 +96,23 @@ const { item } = Astro.props;
     color: black;
     font-size: 3rem;
   }
-
+  .backbtn {
+    display: flex;
+    border: var(--redborder);
+    width: 5rem;
+    height: 2.5rem;
+    margin-left: 1.1rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .backbtn p {
+    font-weight: medium;
+  }
+  .backbtn a {
+    text-decoration: none;
+    color: var(--secondary);
+  }
   h3 {
     font-size: 1.5rem;
   }
@@ -149,8 +165,14 @@ const { item } = Astro.props;
     main {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin: 4rem;
+      margin: 2rem 4rem;
       padding: 0;
+    }
+    .backbtn {
+      width: 5rem;
+      height: 2.5rem;
+      margin-left: 4rem;
+      margin-top: 2rem;
     }
     .prioinfo {
       margin-top: 0rem;
