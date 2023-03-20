@@ -38,6 +38,15 @@ const { title } = Astro.props;
     margin-left: 1rem;
   }
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 20px;
+  }
   @media (min-width: 700px) {
     .grid-container {
       display: grid;
@@ -48,14 +57,5 @@ const { title } = Astro.props;
       margin-right: 75px;
       padding-bottom: 20px;
     }
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    gap: 30px;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-bottom: 20px;
   }
 </style>
