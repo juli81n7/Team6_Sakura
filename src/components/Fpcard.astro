@@ -1,0 +1,152 @@
+---
+const { title, imgPath, description, event_by, place, day, from, to } = Astro.props;
+import Likebtn from "../components/Likebtn.astro";
+---
+
+<li>
+  <article>
+    <div class="image_container">
+      <Likebtn />
+      <img src={imgPath} />
+    </div>
+    <h5>{event_by}</h5>
+    <h4>
+      <a href="#0">{title}</a>
+    </h4>
+    <p class="description">{description}</p>
+  </article>
+  <section class="buttom_nav">
+    <div class="left">
+      <p class="place">
+        {place}
+      </p>
+      <p class="day">
+        {day}
+      </p>
+      <p class="time">
+        <span class="from">
+          {from}
+        </span>
+        -
+        <span class="to">
+          {to}
+        </span>
+      </p>
+    </div>
+    <a href="#">
+      <button class="right">Read more</button>
+    </a>
+  </section>
+</li>
+
+<style>
+  article {
+    overflow: hidden;
+  }
+
+  .image_container {
+    min-height: 220px;
+    width: 100%;
+    border-bottom: var(--redborder);
+    position: relative;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  img {
+    position: absolute;
+    max-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    min-width: 311px;
+    max-width: 400px;
+    border: var(--redborder);
+    scroll-snap-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  h4 {
+    margin-left: 0.3rem;
+    margin-right: 1rem;
+    margin-top: -0.7rem;
+    margin-bottom: -0.5rem;
+    font-size: 1.8rem !important;
+  }
+  h5 {
+    margin-left: 0.3rem;
+    margin-bottom: 0rem;
+    margin-top: 0.3rem;
+  }
+
+  .right {
+    width: 100%;
+    height: 69px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    color: var(--backgroundcolor);
+  }
+  p.description {
+    margin-top: 0rem;
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+  }
+
+  .left {
+    width: 122px;
+    overflow: hidden;
+    border-right: var(--redborder);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left p {
+    font-size: 1rem;
+    margin: -0.15rem;
+    margin-left: 0.4rem;
+  }
+
+  .place {
+    font-weight: 500;
+  }
+
+  .day {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .time {
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  .buttom_nav {
+    height: 69px;
+    display: grid;
+    grid-template-columns: 122px auto;
+    border-top: var(--redborder);
+  }
+
+  button {
+    border: none;
+    border-bottom: var(--redborder);
+  }
+  button:hover {
+    background-color: var(--secondary);
+    transition: 250ms ease-in-out;
+  }
+</style>
