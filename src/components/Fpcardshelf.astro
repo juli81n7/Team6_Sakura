@@ -1,0 +1,34 @@
+---
+import Card from "./Card.astro";
+import Fpcard from "./Fpcard.astro";
+---
+
+<ul class="fp_gridcontainer">
+  <Fpcard />
+  <Fpcard />
+  <Fpcard />
+  <Fpcard />
+</ul>
+
+<style>
+  .fp_gridcontainer {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  @media (min-width: 700px) {
+    .fp_gridcontainer {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
+      justify-content: center;
+      gap: 2rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+</style>
