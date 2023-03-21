@@ -38,8 +38,8 @@ const data4 = data.filter((event) => event.id === 4);
     <meta name="generator" content={Astro.generator} />
     <title>forside</title>
   </head>
-  <main>
-    <body>
+  <body>
+    <main>
       <Topnav />
 
       <div class="parent">
@@ -62,11 +62,10 @@ const data4 = data.filter((event) => event.id === 4);
         <img class="line2" src="../images/line1.png" alt="line" />
         <h2 class="nyheder">Sponsors</h2>
         <Sponsorshelf1 />
-
-        <Footer />
       </section>
-    </body>
-  </main>
+    </main>
+    <Footer />
+  </body>
 
   <style>
     * {
@@ -148,7 +147,9 @@ const data4 = data.filter((event) => event.id === 4);
       z-index: 3;
       background-color: var(--backgroundcolor);
     }
+    main {
+      position: relative;
+      z-index: 3;
+    }
   </style>
-
-
 </html>
