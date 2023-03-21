@@ -1,5 +1,5 @@
 ---
-const { title, imgPath, description, event_by, place, day, from, to } = Astro.props;
+const { title, imgPath, description, event_by, place, day, time } = Astro.props;
 import Likebtn from "../components/Likebtn.astro";
 ---
 
@@ -24,13 +24,7 @@ import Likebtn from "../components/Likebtn.astro";
         {day}
       </p>
       <p class="time">
-        <span class="from">
-          {from}
-        </span>
-        -
-        <span class="to">
-          {to}
-        </span>
+        {time}
       </p>
     </div>
     <a href="#">
