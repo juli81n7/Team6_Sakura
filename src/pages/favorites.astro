@@ -9,8 +9,7 @@ const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
 const options = {
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc3NzQ1OCwiZXhwIjoxOTk0MzUzNDU4fQ.h5wDHuVu4r6oxz_-8j86Y-E3AaQ3YTMcZpv40Pos_Ls",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc3NzQ1OCwiZXhwIjoxOTk0MzUzNDU4fQ.h5wDHuVu4r6oxz_-8j86Y-E3AaQ3YTMcZpv40Pos_Ls",
   },
 };
 
@@ -37,10 +36,7 @@ const booth = data.filter((event) => event.type == "booth" && event.liked === tr
     <Topnav />
     <main>
       <h1>My program</h1>
-      <p>
-        We have made a great program for you to experience at this years festival. Get ready to get to know all sort of things from japanese culture. Get a quick look at alle of the event right here,
-        or go deeper into the events further down.
-      </p>
+      <p>We have made a great program for you to experience at this years festival. Get ready to get to know all sort of things from japanese culture. Get a quick look at alle of the event right here, or go deeper into the events further down.</p>
 
       <Kategori events={saturdayevents} day={"Saturday"} />
       <Kategori events={sundayevents} day={"Sunday"} />
@@ -78,4 +74,4 @@ const booth = data.filter((event) => event.type == "booth" && event.liked === tr
   }
 </style>
 
-<script src="../pages/scripts/favorite.js"></script>
+<script src="../scripts/favorite.js"></script>
