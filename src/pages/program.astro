@@ -19,9 +19,6 @@ const respons = await fetch(url, options);
 const data = await respons.json();
 
 const saturdayevents = data.filter((event) => event.day == "Saturday");
-const saturdayeventsmainstage = data.filter((event) => event.day == "Saturday" && event.place == "Main stage");
-const saturdayeventssecondstage = data.filter((event) => event.day == "Saturday" && event.place == "Second stage");
-const saturdayeventsonthelawn = data.filter((event) => event.day == "Saturday" && event.place == "One the lawn");
 
 const sundayevents = data.filter((event) => event.day == "Sunday");
 
@@ -53,7 +50,6 @@ const booth = data.filter((event) => event.type == "booth");
       </div>
 
       <Kategori events={saturdayevents} day={"Saturday"} />
-
       <Kategori events={sundayevents} day={"Sunday"} />
       <Kategori events={food} day={"Food"} />
       <Kategori events={booth} day={"Booths"} />
