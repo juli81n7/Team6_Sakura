@@ -16,7 +16,8 @@ const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
 const options = {
   headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3Nzc0NTgsImV4cCI6MTk5NDM1MzQ1OH0.8v-p9C_alBTmibzL_qtGCNqtAkcNRGL5TGvI2UFHXH0",
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg3Nzc0NTgsImV4cCI6MTk5NDM1MzQ1OH0.8v-p9C_alBTmibzL_qtGCNqtAkcNRGL5TGvI2UFHXH0",
   },
 };
 
@@ -51,10 +52,10 @@ const data4 = data.filter((event) => event.id === 4);
       <section>
         <br /><br /><br />
         <Fpshelf>
-          <Largebtn />
-          <Largebtn />
-          <Largebtn />
-          <Largebtn />
+          <Largebtn title="Program" link="/program" />
+          <Largebtn title="My Program" link="/favorites" />
+          <Largebtn title="About" link="/about" />
+          <Largebtn title="FAQ" link="/faq" />
         </Fpshelf>
         <img class="line" src="../public/images/line1.png" alt="line" />
         <h2 class="nyheder">News</h2>

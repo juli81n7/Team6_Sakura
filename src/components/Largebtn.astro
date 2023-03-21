@@ -1,9 +1,9 @@
 ---
-const { title } = Astro.props;
+const { title, link } = Astro.props;
 ---
 
-<a href="">
-  <button class="largebutton">My Program</button>
+<a href={link}>
+  <button class="largebutton">{title}</button>
 </a>
 
 <style>
