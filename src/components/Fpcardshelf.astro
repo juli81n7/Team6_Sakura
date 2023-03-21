@@ -6,10 +6,10 @@ const { data1, data2, data3, data4 } = Astro.props;
 ---
 
 <ul class="fp_gridcontainer">
-  {data1.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../public/images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
-  {data2.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../public/images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
-  {data3.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../public/images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
-  {data4.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../public/images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
+  {data1.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
+  {data2.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
+  {data3.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
+  {data4.map((item) => <Fpcard link={"/undersider/" + item.slug} cla={item.class + " " + item.day} title={item.name} description={item.description.slice(0, 150) + "..."} imgPath={"../images/" + `${item.image_path}`} event_by={item.event_firm} place={item.place} time={item.time} day={item.day} item={item.id} liked={item.liked} />)}
 </ul>
 
 <style>
