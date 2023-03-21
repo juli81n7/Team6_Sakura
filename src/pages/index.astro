@@ -12,7 +12,7 @@ import Fpshelf from "../components/Fpshelf.astro";
 import Fpcardshelf from "../components/Fpcardshelf.astro";
 import Sponsorshelf1 from "../components/Sponsorshelf1.astro";
 
-const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/testtabel";
+const url = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
 
 const options = {
   headers: {
@@ -22,6 +22,11 @@ const options = {
 
 const respons = await fetch(url, options);
 const data = await respons.json();
+
+const data1 = data.filter((event) => event.id === 1);
+const data2 = data.filter((event) => event.id === 2);
+const data3 = data.filter((event) => event.id === 3);
+const data4 = data.filter((event) => event.id === 4);
 ---
 
 <html lang="en">
@@ -53,7 +58,7 @@ const data = await respons.json();
         </Fpshelf>
         <img class="line" src="../public/images/line1.png" alt="line" />
         <h2 class="nyheder">News</h2>
-        <Fpcardshelf />
+        <Fpcardshelf data1={data1} data2={data2} data3={data3} data4={data4} />
         <img class="line2" src="../public/images/line1.png" alt="line" />
         <h2 class="nyheder">Sponsors</h2>
         <Sponsorshelf1 />
