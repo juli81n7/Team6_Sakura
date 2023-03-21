@@ -1,7 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
 const existingApiUrl = "https://aruswkvjfqmwbmdbzrgy.supabase.co/rest/v1/sakurafestival";
-const supabaseApiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc3NzQ1OCwiZXhwIjoxOTk0MzUzNDU4fQ.h5wDHuVu4r6oxz_-8j86Y-E3AaQ3YTMcZpv40Pos_Ls";
+const supabaseApiKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFydXN3a3ZqZnFtd2JtZGJ6cmd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODc3NzQ1OCwiZXhwIjoxOTk0MzUzNDU4fQ.h5wDHuVu4r6oxz_-8j86Y-E3AaQ3YTMcZpv40Pos_Ls";
 const supabase = createClient("https://aruswkvjfqmwbmdbzrgy.supabase.co", supabaseApiKey);
 
 const likeBtns = document.querySelectorAll(".likebtn");
